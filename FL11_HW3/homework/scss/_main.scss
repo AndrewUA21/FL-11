@@ -1,0 +1,201 @@
+
+
+@mixin container{
+  padding: 0 190px 0 190px;
+  margin: 0 auto;
+}
+@mixin landingLogo{
+
+    padding-top: 24px;
+    display: flex;
+    img{
+      width: 45px;
+      height: 45px;
+    }
+    p{
+      letter-spacing: 2px;
+      font-size: 25px;
+      color: map-get($colors, mainTextColor);
+      font-family: $fontFamilyFirst;
+      margin: 0 0 0 20px;
+      span{
+        display: block;
+        font-size: 13px;
+        text-align: center;
+      }
+    }
+  }
+
+@mixin textSize{
+  font-size: 16px;
+  font-family: $fontFamilySecond;
+  width: 700px;
+  color:$mainTextColor;
+}
+@mixin button {
+  color: #ffffff;
+  padding: 22px 60px;
+  background-color:  map-get($colors, buttonColor);
+  border: none;
+  border-radius: 5px;
+  margin: 80px 0 218px 0;
+}
+@mixin textDecoration{
+  content: '';
+  background:  map-get($colors, underlineColor);;
+  display: inline-block;
+  position: relative;
+  z-index: -1;
+}
+@mixin itemCardStyle{
+  display: block;
+  width: 30%;
+  padding: 20px;
+  margin: 0 10px;
+  background-color: $itemCardBackground;
+  border-radius: $itemBorderRadius;
+  img{
+    width: 100%;
+    border-radius: 5px;
+  }
+  .section_card_heading{
+    color: $itemCardColorHeader;
+    font-size: 22px;
+    text-align: center;
+    font-family: $fontFamilyFirst;
+    position: relative;
+    z-index: 2;
+    span{
+      @extend .section_text:after;
+      margin-left: 0;
+      top: -26px;
+    }
+  }
+
+}
+body{
+  margin: 0;
+  background: $contentBackgroundColor;
+  header{
+    background-image: $mainBackground;
+    background-size: cover;
+    border-radius: $borderRadius;
+    .header-wrap{
+      @include container;
+      .landing-logo{
+        @include landingLogo;
+      }
+      .header_heading{
+        width: 538px;
+        font-size: 78px;
+        line-height: 78px;
+        color: $mainTextColor;
+        font-family: $fontFamilySecond;
+        font-weight: bold;
+        position: relative;
+        z-index: 2;
+      }
+      .header_heading:after{
+      @include textDecoration;
+        width: 324px;
+        height: 20px;
+        top: -70px;
+      }
+      .header_text{
+        @include  textSize;
+      }
+      .header_button{
+        @include button;
+      }
+    }
+  }
+  .section{
+    @include container;
+    position: relative;
+    .section_text{
+      margin-top: 60px;
+      text-align: center;
+      font-size: 45px;
+      font-family: $fontFamilySecond;
+      color: $mainTextColor;
+      position: relative;
+      z-index: 2;
+
+    }
+    .section_text:after{
+      @include textDecoration;
+      width: 194px;
+      height: 10px;
+      margin-left: -217px;
+    }
+    .section_card_wrap{
+      display: flex;
+      justify-content: space-between;
+      .section_card{
+        @include itemCardStyle;
+        .section_card_text{
+          text-align: center;
+          color: $itemCardParagraph;
+          font-size: 17px;
+          font-family: $fontFamilySecond;
+        }
+      }
+    }
+  }
+  .section_banner{
+    @extend .section_card_wrap;
+    margin-top: 178px;
+    padding: 20px 50px;
+    background: $sectionBannerBackground;
+    border-radius: $border-radius;
+    position: relative;
+    z-index: 3;
+    bottom: -40px;
+    .section_banner_heading{
+      font-size: 28px;
+      font-weight: 700;
+      font-family: $fontFamilyFirst;
+      color: $mainTextColor;
+      position: relative;
+      z-index: 2;
+    }
+    .section_banner_heading:after{
+      @include textDecoration;
+      width: 60px;
+      height: 16px;
+      left: -274px;
+    }
+    .section_banner_text{
+      font-size: 15px;
+      font-weight: 400;
+      font-family: $fontFamilyFirst;
+      color: $bannerSecondColor;
+    }
+    .section_banner_button{
+      @include button;
+      margin: 60px 0;
+    }
+  }
+footer{
+  padding: 164px 0 64px 0;
+  background: $itemCardBackground;
+  color: $contentBackgroundColor;
+  .footer-wrap{
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    .footer_logo{
+      @include landingLogo;
+      p{color: $footerColor;}
+    }
+    .footer_text{
+      width: 366px;
+      color: $footerColor;
+    }
+    .footer-cr{
+      margin-top: 32px;
+      color: $footerColor;
+    }
+  }
+}
+}
