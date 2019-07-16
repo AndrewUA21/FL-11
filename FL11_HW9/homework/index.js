@@ -109,16 +109,60 @@ canConvertToDate('2016-13-18T00:00:00');
 canConvertToDate('2016-03-18T00:00:00');
 
 function daysBetween(date1,date2){
+    let millisecondsPerDay = 86400000;
     let firstDate = date1;
-    console.log(firstDate);
     let secondDate = date2;
-    console.log(secondDate);
-    let result = Math.round((secondDate - firstDate)/86400000);
+    let result = Math.round((secondDate - firstDate)/millisecondsPerDay);
     return result;
 }
-daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00'))  // 32
-//8
+daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00'));
+
+let peopleParam = [
+    {
+        "_id": "5b5e3168c6bf40f2c1235cd6",
+        "index": 0,
+        " birthday ": '2016-03-18T00:00:00',
+        "eyeColor": "green",
+        "name": "Stein",
+        "favoriteFruit": "apple"
+    },
+    {
+        "_id": "5b5e3168e328c0d72e4f27d8",
+        "index": 1,
+        " birthday ": '1991-02-11T00:00:00',
+        "eyeColor": "blue",
+        "name": "Cortez",
+        "favoriteFruit": "strawberry"
+    },
+    {
+        "_id": "5b5e3168cc79132b631c666a",
+        "index": 2,
+        " birthday ": '1984-04-17T00:00:00',
+        "eyeColor": "blue",
+        "name": "Suzette",
+        "favoriteFruit": "apple"
+    },
+    {
+        "_id": "5b5e31682093adcc6cd0dde5",
+        "index": 3,
+        " birthday ": '1994-04-17T00:00:00',
+        "eyeColor": "green",
+        "name": "George",
+        "favoriteFruit": "banana"
+    }
+];
+function getAmountOfAdultPeople(peopleParam){
+
+}
+getAmountOfAdultPeople(peopleParam) // returns 3;
 
 //9
-
+function keys(data){
+     let arrKeys = [];
+    for (let prop in data) {
+        arrKeys.push(prop);
+    }
+    return arrKeys;
+}
+keys({keyOne: 1, keyTwo: 2, keyThree: 3});
 //10
