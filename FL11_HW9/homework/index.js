@@ -100,15 +100,23 @@ let month = date.getMonth();
    return console.log('Date:'+' '+ month+' '+day+' '+year);
 }
 showFormattedDate(new Date('2019-01-27T01:10:00'));
-//6
+
 function canConvertToDate(date){
     let correctDate= new Date(date);
     return console.log(!isNaN(Date.parse(correctDate)));
 }
 canConvertToDate('2016-13-18T00:00:00');
 canConvertToDate('2016-03-18T00:00:00');
-//7
 
+function daysBetween(date1,date2){
+    let firstDate = date1;
+    console.log(firstDate);
+    let secondDate = date2;
+    console.log(secondDate);
+    let result = Math.round((secondDate - firstDate)/86400000);
+    return result;
+}
+daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00'))  // 32
 //8
 
 //9
