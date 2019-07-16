@@ -40,7 +40,7 @@ let arr = [];
     });
     return arr;
 }
-mapArray([2, 5, 8], function(el) { return el + 3 })
+mapArray([2, 5, 8], function(el) { return el + 3 });
 
 function filterArray(data,func) {
     let filterArr = [];
@@ -52,7 +52,7 @@ function filterArray(data,func) {
     return filterArr;
 }
 filterArray([2, 5, 8], function(el) { return el > 3 });
-//5
+
 function showFormattedDate(date){
 let year = date.getFullYear();
 let day = date.getDate();
@@ -101,7 +101,16 @@ let month = date.getMonth();
 }
 showFormattedDate(new Date('2019-01-27T01:10:00'));
 //6
+function canConvertToDate(date){
+    let correctDate= new Date(date);
+    return console.log(!isNaN(Date.parse(correctDate)));
+}
+canConvertToDate('2016-13-18T00:00:00');
+canConvertToDate('2016-03-18T00:00:00');
 //7
+
 //8
+
 //9
+
 //10
