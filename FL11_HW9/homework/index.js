@@ -41,8 +41,17 @@ let arr = [];
     return arr;
 }
 mapArray([2, 5, 8], function(el) { return el + 3 })
-//4
 
-
+function filterArray(data,func) {
+    let filterArr = [];
+    executeforEach(data, function(args){
+        if (func(args)) {
+            filterArr.push(args);
+        }
+    });
+    console.log(filterArr);
+    return filterArr;
+}
+filterArray([2, 5, 8], function(el) { return el > 3 });
 
 
