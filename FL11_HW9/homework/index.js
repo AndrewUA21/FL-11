@@ -9,8 +9,22 @@ function getNumbers (data){
     return arr;
 }
 getNumbers('n1um3ber95');
-//1
 
+function findTypes(...data){
+let result = {};
+let type;
+    for(let i = 0; i<data.length; i++){
+        type = typeof data[i];
+        if(result.hasOwnProperty(type)){
+            result[type] += 1;
+        }else{
+            result[type] = 1;
+        }
+    }
+    return result;
+}
+findTypes('number');
+findTypes(null, 5, "hello");
 
 function executeforEach(data, func){
     for(let i = 0; i<data.length; i++){
