@@ -156,7 +156,6 @@ function getAmountOfAdultPeople(peopleParam){
 }
 getAmountOfAdultPeople(peopleParam) // returns 3;
 
-//9
 function keys(data){
      let arrKeys = [];
     for (let prop in data) {
@@ -166,3 +165,12 @@ function keys(data){
 }
 keys({keyOne: 1, keyTwo: 2, keyThree: 3});
 //10
+function values(data){
+    let arrResult = [];
+    for (let prop in data) {
+        arrResult.push(data[prop]);
+    }
+    console.log(arrResult);
+}
+
+values({keyOne: 1, keyTwo: 2, keyThree: 3});
