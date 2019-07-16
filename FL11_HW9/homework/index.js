@@ -24,14 +24,16 @@ let type;
     return result;
 }
 findTypes('number');
-findTypes(null, 5, "hello");
+findTypes(null, 5, 'hello');
 
 function executeforEach(data, func){
     for(let i = 0; i<data.length; i++){
         func(data[i]);
     }
 }
-executeforEach([1,2,3], function(el) { console.log(el) });
+executeforEach([1,2,3], function(el) {
+    console.log(el)
+});
 
 function mapArray(data,func){
 let arr = [];
@@ -40,9 +42,11 @@ let arr = [];
     });
     return arr;
 }
-mapArray([2, 5, 8], function(el) { return el + 3 });
+mapArray([2, 5, 8], function(el) {
+    return el + 3
+});
 
-function filterArray(data,func) {
+function filterArray(data,func){
     let filterArr = [];
     executeforEach(data, function(args){
         if (func(args)) {
@@ -51,7 +55,9 @@ function filterArray(data,func) {
     });
     return filterArr;
 }
-filterArray([2, 5, 8], function(el) { return el > 3 });
+filterArray([2, 5, 8], function(el) {
+    return el > 3
+    });
 
 function showFormattedDate(date){
 let year = date.getFullYear();
@@ -95,7 +101,7 @@ let month = date.getMonth();
             month = 'Dec';
             break;
         default:
-            console.log( 'I don`t know' );
+            console.log('I don`t know');
     }
    return console.log('Date:'+' '+ month+' '+day+' '+year);
 }
@@ -119,42 +125,45 @@ daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00'));
 
 let peopleParam = [
     {
-        "_id": "5b5e3168c6bf40f2c1235cd6",
-        "index": 0,
-        " birthday ": '2016-03-18T00:00:00',
-        "eyeColor": "green",
-        "name": "Stein",
-        "favoriteFruit": "apple"
+        '_id': '5b5e3168c6bf40f2c1235cd6',
+        'index': 0,
+        ' birthday ': '2016-03-18T00:00:00',
+        'eyeColor': 'green',
+        'name': 'Stein',
+        'favoriteFruit': 'apple'
     },
     {
-        "_id": "5b5e3168e328c0d72e4f27d8",
-        "index": 1,
-        " birthday ": '1991-02-11T00:00:00',
-        "eyeColor": "blue",
-        "name": "Cortez",
-        "favoriteFruit": "strawberry"
+        '_id': '5b5e3168e328c0d72e4f27d8',
+        'index': 1,
+        ' birthday ': '1991-02-11T00:00:00',
+        'eyeColor': 'blue',
+        'name': 'Cortez',
+        'favoriteFruit': 'strawberry'
     },
     {
-        "_id": "5b5e3168cc79132b631c666a",
-        "index": 2,
-        " birthday ": '1984-04-17T00:00:00',
-        "eyeColor": "blue",
-        "name": "Suzette",
-        "favoriteFruit": "apple"
+        '_id': '5b5e3168cc79132b631c666a',
+        'index': 2,
+        ' birthday ': '1984-04-17T00:00:00',
+        'eyeColor': 'blue',
+        'name': 'Suzette',
+        'favoriteFruit': 'apple'
     },
     {
-        "_id": "5b5e31682093adcc6cd0dde5",
-        "index": 3,
-        " birthday ": '1994-04-17T00:00:00',
-        "eyeColor": "green",
-        "name": "George",
-        "favoriteFruit": "banana"
+        '_id': '5b5e31682093adcc6cd0dde5',
+        'index': 3,
+        ' birthday ': '1994-04-17T00:00:00',
+        'eyeColor': 'green',
+        'name': 'George',
+        'favoriteFruit': 'banana'
     }
 ];
-function getAmountOfAdultPeople(peopleParam){
-
+function getAmountOfAdultPeople(data){
+    let adultAge = 6574;
+        return filterArray(data, function (el) {
+        return daysBetween(new Date(el[' birthday ']), new Date()) > adultAge
+    }).length
 }
-getAmountOfAdultPeople(peopleParam) // returns 3;
+getAmountOfAdultPeople(peopleParam);
 
 function keys(data){
      let arrKeys = [];
@@ -164,13 +173,12 @@ function keys(data){
     return arrKeys;
 }
 keys({keyOne: 1, keyTwo: 2, keyThree: 3});
-//10
+
 function values(data){
     let arrResult = [];
     for (let prop in data) {
         arrResult.push(data[prop]);
     }
-    console.log(arrResult);
+    return arrResult;
 }
-
 values({keyOne: 1, keyTwo: 2, keyThree: 3});
