@@ -55,11 +55,8 @@ filterArray([2, 5, 8], function(el) { return el > 3 });
 //5
 function showFormattedDate(date){
 let year = date.getFullYear();
-    console.log(year);
 let day = date.getDate();
-    console.log(day);
 let month = date.getMonth();
-    console.log(month);
     switch (month) {
         case 0:
             month = 'Jan';
@@ -100,7 +97,7 @@ let month = date.getMonth();
         default:
             console.log( 'I don`t know' );
     }
-    console.log('Date:'+' '+ month+' '+day+' '+year);
+   return console.log('Date:'+' '+ month+' '+day+' '+year);
 }
 showFormattedDate(new Date('2019-01-27T01:10:00'));
 //6
