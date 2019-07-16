@@ -49,9 +49,62 @@ function filterArray(data,func) {
             filterArr.push(args);
         }
     });
-    console.log(filterArr);
     return filterArr;
 }
 filterArray([2, 5, 8], function(el) { return el > 3 });
-
-
+//5
+function showFormattedDate(date){
+let year = date.getFullYear();
+    console.log(year);
+let day = date.getDate();
+    console.log(day);
+let month = date.getMonth();
+    console.log(month);
+    switch (month) {
+        case 0:
+            month = 'Jan';
+            break;
+        case 1:
+            month = 'Feb';
+            break;
+        case 2:
+            month = 'Mar';
+            break;
+        case 3:
+            month = 'Apr';
+            break;
+        case 4:
+            month = 'May';
+            break;
+        case 5:
+            month = 'Jun';
+            break;
+        case 6:
+            month = 'Jul';
+            break;
+        case 7:
+            month = 'Aug';
+            break;
+        case 8:
+            month = 'Sep';
+            break;
+        case 9:
+            month = 'Oct';
+            break;
+        case 10:
+            month = 'Nov';
+            break;
+        case 11:
+            month = 'Dec';
+            break;
+        default:
+            console.log( 'I don`t know' );
+    }
+    console.log('Date:'+' '+ month+' '+day+' '+year);
+}
+showFormattedDate(new Date('2019-01-27T01:10:00'));
+//6
+//7
+//8
+//9
+//10
