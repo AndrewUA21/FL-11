@@ -33,5 +33,17 @@ function createTask() {
         document.getElementById('input-task').value = '';
     }
 }
+document.getElementById('add').addEventListener('click', createTask);
 
+function deleteTask(e) {
+    let deleteEvent = e.target;
+    if (deleteEvent.className === 'material-icons delete') {
+        let li = deleteEvent.parentNode;
+        li.parentNode.removeChild(li);
+        if (document.querySelectorAll('.list-item').length < 10) {
+            document.querySelector('.message').innerText = ''
+        }
+    }
+    e.stopPropagation();
+}
 
